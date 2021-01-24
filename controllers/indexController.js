@@ -6,6 +6,24 @@ const indexController = {
   },
   pizza: (req, res)=>{
     return res.render('pizza', )
+  },
+  create: (req, res)=>{
+    res.render('cadastroPizza');
+  },
+  store: (req, res)=>{
+    let {nome, ingredientes, preco} = req.body;
+    pizzas.push(
+      {
+        "id": null,
+        "nome": nome,
+        "ingredientes": ingredientes,
+        "preco": preco,
+        "img": null,
+        "destaque": true,
+      }
+    )
+    /* console.log(req.body) */
+    return res.redirect('/')
   }
 }
 
